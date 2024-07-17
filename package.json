@@ -1,14 +1,14 @@
 {
-  "name": "proto2api",
-  "version": "0.0.8",
-  "description": "Convert proto file to api file",
+  "name": "@guoxiao/proto2api",
+  "version": "1.0.0",
+  "description": "Convert proto file to api file, forked from @yuexing0921/proto2api original repo: https://github.com/yuexing0921/proto2api",
   "bin": {
     "proto2api": "./bin/index"
   },
   "packageManager": "pnpm@6.32.3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yuexing0921/proto2api"
+    "url": "https://github.com/guoxiao0521/proto2api"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.js",
@@ -20,7 +20,7 @@
   "keywords": [
     "proto"
   ],
-  "author": "yuexing <yuexing0921@gmail.com>",
+  "author": "guoxiao <mssgt002@163.com>",
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",

@@ -6,6 +6,7 @@
 具体使用方式：https://www.yuque.com/yuexing0921/blog/ebmrh5
 
 ## 快速开始
+
 ``` bash
 npm install -g proto2api
 
@@ -13,7 +14,9 @@ cd proto2api
 
 proto2api -d examples/hello.proto -o api
 ```
+
 ## 命令行说明
+
 ```
 Usage: proto2api [options]
 
@@ -41,5 +44,7 @@ Options:
   -h, --help            display help for command
   -h, --help            display help for command
 ```
+
 ## 参考文档
+
 Google Protobuf 语法指南 https://developers.google.com/protocol-buffers/docs/proto3

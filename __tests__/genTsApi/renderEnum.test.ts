@@ -1,77 +1,77 @@
-import { trim } from "../_utils";
-import { renderEnum } from "../../src/genTsApi";
+import {trim} from "../_utils";
+import {renderEnum} from "../../src/genTsApi";
 
 describe("renderEnum test", () => {
-  test("Normal number enum", () => {
-    const list = [
-      {
-        name: "Status",
-        members: [
-          {
-            name: "START",
-          },
-          {
-            name: "END",
-          },
-        ],
-      },
-    ];
-    const result = trim(renderEnum(list));
-    const expected = trim(`
+    test("Normal number enum", () => {
+        const list = [
+            {
+                name: "Status",
+                members: [
+                    {
+                        name: "START",
+                    },
+                    {
+                        name: "END",
+                    },
+                ],
+            },
+        ];
+        const result = trim(renderEnum(list));
+        const expected = trim(`
       export enum Status {
         START,
         END
       }
     `);
-    expect(result).toBe(expected);
-  });
+        expect(result).toBe(expected);
+    });
 
-  test("String enumeration", () => {
-    const list = [
-      {
-        name: "Status",
-        members: [
-          {
-            name: "START",
-            initializer: "start",
-          },
-          {
-            name: "END",
-            initializer: "end",
-          },
-        ],
-      },
-    ];
-    const result = trim(renderEnum(list));
-    const expected = trim(`
+    test("String enumeration", () => {
+        const list = [
+            {
+                name: "Status",
+                members: [
+                    {
+                        name: "START",
+                        initializer: "start",
+                    },
+                    {
+                        name: "END",
+                        initializer: "end",
+                    },
+                ],
+            },
+        ];
+        const result = trim(renderEnum(list));
+        const expected = trim(`
       export enum Status {
         START = 'start',
         END = 'end'
       }
     `);
-    expect(result).toBe(expected);
-  });
+        expect(result).toBe(expected);
+    });
 
-  test("An enumeration with comments", () => {
-    const list = [
-      {
-        name: "Status",
-        members: [
-          {
-            name: "START",
-            initializer: "start",
-            comment: "status start",
-          },
-          {
-            name: "END",
-            initializer: "end",
-            comment: "status end",
-          },
-        ],
-      },
-    ];
-    const result = trim(renderEnum(list));
-    const expected = trim(`
+    test("An enumeration with comments", () => {
+        const list = [
+            {
+                name: "Status",
+                members: [
+                    {
+                        name: "START",
+                        initializer: "start",
+                        comment: "status start",
+                    },
+                    {
+                        name: "END",
+                        initializer: "end",
+                        comment: "status end",
+                    },
+                ],
+            },
+        ];
+        const result = trim(renderEnum(list));
+        const expected = trim(`
       export enum Status {
         // status start
         START = 'start',
@@ -79,6 +79,6 @@ describe("renderEnum test", () => {
         END = 'end'
       }
     `);
-    expect(result).toBe(expected);
-  });
+        expect(result).toBe(expected);
+    });
 });
